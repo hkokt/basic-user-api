@@ -43,7 +43,7 @@ Content Type: `Application/json`
 
 Request: 
 
-Authentication Bearer: token from `/login`
+Authentication Bearer: token from `/auth/login`
 
 Response:
 
