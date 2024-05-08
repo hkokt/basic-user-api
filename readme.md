@@ -4,7 +4,7 @@
 Create an `admin role user` and then change the rule in `br/com/auth/infra/configuration/security/SecurityConfigurations.java`. At line 35, replace `.permitAll()` with `.hasRole("ADMIN")`.
 
 ## Post `/auth/register`
-
+Authentication Bearer: token from `/auth/login`
 Request `Application/json`
 
         {
