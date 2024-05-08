@@ -1,17 +1,17 @@
 package br.com.auth.domain.repository;
 
-import br.com.auth.domain.model.user.User;
+import br.com.auth.domain.entity.user.User;
 import org.springframework.security.core.userdetails.UserDetails;
 
 public interface IUserRepository {
 
-    public UserDetails findByEmail(String email);
+    UserDetails findByEmail(String email);
 
-    public User findById(Long id);
+    User findById(Long id);
 
-    public void insert(User user);
+    void insert(User user);
 
-    public User update(User user);
+    User update(User user);
 
-    public void delete(Long id);
+    void delete(Long id);
 }

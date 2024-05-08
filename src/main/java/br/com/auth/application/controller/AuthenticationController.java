@@ -1,10 +1,11 @@
 package br.com.auth.application.controller;
 
-import br.com.auth.application.dto.authentication.AuthenticationDto;
-import br.com.auth.application.dto.authentication.LoginResponseDto;
-import br.com.auth.application.dto.authentication.RegisterDto;
-import br.com.auth.application.service.IUserService;
+import br.com.auth.buildingblocks.dto.AuthenticationDto;
+import br.com.auth.buildingblocks.dto.LoginResponseDto;
+import br.com.auth.buildingblocks.dto.RegisterDto;
+import br.com.auth.domain.service.IUserService;
 import jakarta.validation.Valid;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -28,7 +29,7 @@ public class AuthenticationController {
             var responseObject = new LoginResponseDto(authDto.email(), token);
             return ResponseEntity.ok(responseObject);
         } catch (Exception e) {
-            return ResponseEntity.badRequest().build();
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
         }
     }
 

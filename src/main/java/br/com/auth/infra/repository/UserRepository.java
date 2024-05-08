@@ -1,6 +1,6 @@
 package br.com.auth.infra.repository;
 
-import br.com.auth.domain.model.user.User;
+import br.com.auth.domain.entity.user.User;
 import br.com.auth.domain.repository.IUserRepository;
 import br.com.auth.infra.mapper.UserRowMapper;
 import org.springframework.beans.factory.annotation.Autowired;

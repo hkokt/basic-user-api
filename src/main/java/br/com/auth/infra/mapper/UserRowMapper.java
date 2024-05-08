@@ -1,7 +1,7 @@
 package br.com.auth.infra.mapper;
 
-import br.com.auth.domain.model.user.User;
-import br.com.auth.domain.model.user.UserRole;
+import br.com.auth.domain.entity.user.User;
+import br.com.auth.domain.entity.user.UserRole;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;

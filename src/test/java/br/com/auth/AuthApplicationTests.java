@@ -4,9 +4,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
 
 import br.com.auth.application.controller.AuthenticationController;
-import br.com.auth.application.dto.authentication.RegisterDto;
-import br.com.auth.domain.model.user.UserRole;
-import br.com.auth.domain.service.UserService;
+import br.com.auth.buildingblocks.dto.RegisterDto;
+import br.com.auth.domain.entity.user.UserRole;
+import br.com.auth.service.UserService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

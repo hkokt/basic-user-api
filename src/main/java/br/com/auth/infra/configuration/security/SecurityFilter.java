@@ -1,7 +1,6 @@
 package br.com.auth.infra.configuration.security;
 
-import br.com.auth.application.service.ITokenService;
-import br.com.auth.application.service.IUserService;
+import br.com.auth.domain.service.ITokenService;
 import br.com.auth.domain.repository.IUserRepository;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -28,16 +27,17 @@ public class SecurityFilter extends OncePerRequestFilter {
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
-        String token = recoverToken(request);
+            String token = recoverToken(request);
 
-        if (token != null) {
-            String email = tokenService.validateToken(token);
-            UserDetails userDetails = userRepository.findByEmail(email);
-            var authentication = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
-            SecurityContextHolder.getContext().setAuthentication(authentication);
-        }
+            if (token != null) {
+                String email = tokenService.validateToken(token);
+                UserDetails userDetails = userRepository.findByEmail(email);
+                var authentication = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
+                SecurityContextHolder.getContext().setAuthentication(authentication);
+            }
 
-        filterChain.doFilter(request, response);
+            filterChain.doFilter(request, response);
+
     }
 
     private String recoverToken(HttpServletRequest request) {
