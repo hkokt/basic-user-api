@@ -5,6 +5,7 @@ Create an `admin role user` and then change the rule in `br/com/auth/infra/confi
 
 ## Post `/auth/register`
 Authentication Bearer: token from `/auth/login`
+
 Request `Application/json`
 
         {
